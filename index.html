@@ -11,6 +11,53 @@
   <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
 
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <style>
+    *{
+    margin: 0;
+    box-sizing: border-box;        
+    }
+    body{
+        display: grid;
+        min-height: 100dvh;
+        place-items: center;
+        background:linear-gradient(to bottom left,blue 40%,rgb(71, 4, 255)70%)
+        
+    }
+    div{
+        text-align: center;
+        background: linear-gradient(blue 50%, purple 100%);
+        border-top: 2px solid white;
+        border-bottom: 2px solid white;
+        color: white;
+        padding: 15px;
+        border-radius: 20px;
+    }
+    button{
+        padding-right: 20px;
+        padding-left: 20px;
+        font-size: larger;
+        border-style: ridge;
+        cursor: pointer;
+        transition:all 0ms ease-in-out
+
+    }
+    .mais{
+        color: green;
+        background-color: chartreuse;
+        border-radius: 10px;
+    }
+    .menos{
+        color: rgb(255, 0, 0);
+        background-color: rgb(116, 9, 9);
+        border-radius: 10px;
+        padding-right: 22px;
+        padding-left: 22px;
+    }
+    p{
+        font-size: 60px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+  </style>
 </head>
 
 <body>
@@ -22,7 +69,7 @@
 
 function App() {
 
-  const [numero, setNumero] = React.useState(0)
+  const [numero, setkk] = React.useState(0)
 
   return (
     <div>
@@ -30,11 +77,11 @@ function App() {
 
       <p>{numero}</p>
 
-      <button onClick={() => setNumero(numero + 1)}>
+      <button onClick={() => setkk(numero + 1)} class = "mais">
         +
-      </button>
+      </button><br/>
 
-      <button onClick={() => setNumero(numero - 1)}>
+      <button onClick={() => setkk(numero - 1)} class = "menos">
         -
       </button>
     </div>
