@@ -67,6 +67,24 @@
     text-shadow: 5px 5px 2px rgb(127, 1, 49)
     ;
   }
+.menu{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px;
+  text-align: center;
+
+}
+
+.menu a{
+  color: white;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 18px;
+  background: linear-gradient(to right ,rgb(1, 1, 42) 30%,rgb(34, 0, 57) 50%);
+  font-size: 30px;
+}
 </style>
 </head>
 
@@ -78,21 +96,25 @@
 const root = ReactDOM.createRoot(document.getElementById("root"))
 
 
- function App(){
-  const[numero,setNumero] = React.useState(0)
-  return (
+function App(){
+  const [numero, setNumero] = React.useState(0)
 
-  <div>
-    <h1>Contador</h1>
-    <p>{numero}</p>
-    <button onClick= {()=> setNumero(numero + 1)}>
-      +
-    </button>
-    <button onClick= {()=> setNumero(numero - 1)}>
-      -
-    </button>
-  </div>
-)
+  return (
+    <>
+      <nav className="menu">
+        <a href="https://lista-de-tarefas-iota-one.vercel.app/">
+          Go to Task List
+        </a>
+      </nav>
+
+      <div>
+        <h1>Contador</h1>
+        <p>{numero}</p>
+        <button onClick={() => setNumero(numero + 1)}>+</button>
+        <button onClick={() => setNumero(numero - 1)}>-</button>
+      </div>
+    </>
+  )
 }
 root.render(<App />)
 
